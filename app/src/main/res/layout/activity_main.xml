@@ -11,20 +11,19 @@
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
         android:text="Convertidor de Números"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
 
-    <!-- TextView para introducir el número y mostrar el resultado -->
-    <TextView
+    <!-- EditText para introducir el número -->
+    <EditText
         android:id="@+id/numeroEntrada"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Introduce un número entero"
         android:inputType="number"
         android:textSize="18sp"
-        android:background="@android:drawable/edit_text"
         android:padding="10dp"
         android:layout_marginBottom="24dp"/>
 
@@ -75,3 +74,4 @@
         android:layout_marginTop="24dp"/>
 
 </LinearLayout>
+
