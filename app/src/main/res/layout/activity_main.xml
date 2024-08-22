@@ -1,33 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/container"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_vertical|center_horizontal">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
+    <!-- Título de la aplicación -->
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        android:layout_marginBottom="32dp"
+        android:text="Convertidor de Números"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-    <fragment
-        android:id="@+id/nav_host_fragment_activity_main"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <!-- TextView para introducir el número y mostrar el resultado -->
+    <TextView
+        android:id="@+id/numeroEntrada"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/nav_view"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/mobile_navigation" />
+        android:layout_height="wrap_content"
+        android:hint="Introduce un número entero"
+        android:inputType="number"
+        android:textSize="18sp"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp"
+        android:layout_marginBottom="24dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- RadioGroup para opciones de conversión -->
+    <RadioGroup
+        android:id="@+id/opcionesConversion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="24dp">
+
+        <RadioButton
+            android:id="@+id/radioBinario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir a Binario" />
+
+        <RadioButton
+            android:id="@+id/radioOctal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir a Octal" />
+
+        <RadioButton
+            android:id="@+id/radioHexadecimal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir a Hexadecimal" />
+    </RadioGroup>
+
+    <!-- Botón para realizar la conversión -->
+    <Button
+        android:id="@+id/botonConvertir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Convertir"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- TextView para mostrar el resultado de la conversión -->
+    <TextView
+        android:id="@+id/resultadoConversion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="El resultado se mostrará aquí"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:layout_marginTop="24dp"/>
+
+</LinearLayout>
